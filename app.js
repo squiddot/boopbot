@@ -17,3 +17,7 @@ var options = {
 
 var client = new tmi.client(options);
 client.connect();
+
+client.on("connected", function(address, port) {
+  client.action("shesquid", "I'm connected! Hello shesquidchat!");
+});
