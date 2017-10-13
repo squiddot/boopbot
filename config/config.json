@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "taylorcgaines",
+    "password": null,
+    "database": "boopbot",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "taylorcgaines",
+    "password": null,
+    "database": "boopbot",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "taylorcgaines",
+    "password": null,
+    "database": "boopbot",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
