@@ -31,7 +31,6 @@ dsdeaths = 75;
 // });
 
 client.on("chat", function(channel, user, message, self) {
-
   if (message == "!boop ds") {
     models.Deaths
       .findOne({
@@ -43,8 +42,8 @@ client.on("chat", function(channel, user, message, self) {
         client.action(
           "shesquid",
           "Ramen has died " + result.amount + "times so far!"
-        return;
         );
+        return;
       });
   }
   if (message == "!boop ds ramendied" && user.username == "shesquid") {
