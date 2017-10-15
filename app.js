@@ -21,17 +21,16 @@ client.connect();
 
 dsdeaths = 75;
 
-const deaths = models.Deaths.build({
-  game: "dark souls",
-  amount: 100
-});
-
-deaths.save().then(function(newDeaths) {
-  console.log(newDeaths.game);
-});
+// const deaths = models.Deaths.build({
+//   game: "dark souls",
+//   amount: 100
+// });
+//
+// deaths.save().then(function(newDeaths) {
+//   console.log(newDeaths.game);
+// });
 
 client.on("chat", function(channel, user, message, self) {
-  dsdeaths = 75;
 
   if (message == "!boop ds") {
     models.Deaths
@@ -44,6 +43,7 @@ client.on("chat", function(channel, user, message, self) {
         client.action(
           "shesquid",
           "Ramen has died " + result.amount + "times so far!"
+        return;
         );
       });
   }
