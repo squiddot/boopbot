@@ -50,6 +50,9 @@ client.on("chat", function(channel, user, message, self) {
   if (message == "!boop ds ramendied" && user.username == "shesquid") {
     dsdeaths = dsdeaths + 1;
   }
+  // if (message == "!boop ds set" && user.username == "shesquid") {
+  //   dsdeaths = dsdeaths + 1;
+  // }
   return;
 });
 
