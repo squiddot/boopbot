@@ -13,7 +13,7 @@ var options = {
     username: "bestboiboop",
     password: "oauth:wqxszmezhqttq5pe7offc1pzy4dbqy"
   },
-  channels: ["shesquid"]
+  channels: ["shesquid", "kiwitb"]
 };
 
 var client = new tmi.client(options);
@@ -40,14 +40,28 @@ client.on("chat", function(channel, user, message, self) {
       })
       .then(function(result) {
         client.action(
-          "shesquid",
-          "Ramen has died " + result.amount + "times so far!"
+          "kiwitb",
+          "Ramen has died " + result.amount + " times so far!"
         );
         return;
       });
   }
   if (message == "!boop ds ramendied" && user.username == "shesquid") {
-    dsdeaths = dsdeaths + 1;
+    models.Deaths
+      .findOne({
+        where: {
+          game: "dark souls"
+        }
+      })
+      .then(function(result) {
+        result.amount = result.amount + 1;
+        client.action(
+          "kiwitb",
+          "Oh dear, Ramen has now died " + result.amount + "times...."
+        );
+        result.save();
+        return;
+      });
   }
   // if (message == "!boop ds set" && user.username == "shesquid") {
   //   dsdeaths = dsdeaths + 1;
