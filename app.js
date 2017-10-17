@@ -13,7 +13,7 @@ var options = {
     username: "bestboiboop",
     password: "oauth:wqxszmezhqttq5pe7offc1pzy4dbqy"
   },
-  channels: ["shesquid", "kiwitb"]
+  channels: ["shesquid", "kiwitb", "theramenwizard"]
 };
 
 var client = new tmi.client(options);
